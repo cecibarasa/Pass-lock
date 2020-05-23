@@ -17,9 +17,18 @@ class Credentials:
         '''
         Credentials.credentials_list.append(self)
 
+    def delete_credential(self):
+
+        '''
+        delete_user method deletes a saved user from the user_list
+        '''
+
+        Credentials.credentials_list.remove(self)    
+
     @classmethod
     def display_credentials(cls):
         '''
         Returns the credential list
         '''    
         return cls.credentials_list
+    

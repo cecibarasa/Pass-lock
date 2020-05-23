@@ -58,11 +58,12 @@ def main():
     print("Welcome to The Password Locker, select any option")
 
     while True:
-        print("\n 1 - Create a new user account  \n 2- Register new credentials \n 3- Display existing users \n 4- Exit")
+        print("\n 1 - Create a new user account  \n 2- Register new credentials \n 3- Display existing users \n 4- Delete Account \n 5- Exit")
 
         option_1 = input()
 
         if option_1 == '1':
+            
             print("New User")
             print("-"*20)
 
@@ -74,17 +75,19 @@ def main():
 
             print("password..")
             password = input()
-
+            
             save_user(create_user(service_provider, username, password))
             save_credentials(create_credentials(service_provider, username, password))
             print("\n")
-
-            print(f"The {service_provider} account by {username} has been successfully registered")
-            print(f"{username} your password is {password}")
+            
+            print(f"The {service_provider} account by {username} and {password} has been successfully registered")
+            #print(f"{username} your password is {password}")
 
             print("\n")
 
         elif option_1 == '2':
+            no_of_accounts = int(input("How many accounts would you like to have?"))
+            range(no_of_accounts)
             print("New User")
             print("-" * 20)
             
@@ -123,7 +126,7 @@ def main():
 
             if display_user():
                 print("Here is a alist of all the accounts")
-                print("/n")
+                print("\n")
 
                 for user in display_user():
                     print(f"{user.service_provider}, {user.username} is registered")
@@ -134,7 +137,14 @@ def main():
                     print("Sorry your details are invalid")
                     print("\n")
 
-        elif option_1 == 4:
+        elif option_1 == '4':
+            print("\n")
+            # for credentials in save_credentials(credential.username):
+            #     print(f"Are you sure you want to delete {credential.username} ?")
+            #     print("\n")
+            #     return Credentials.credentials_list.remove(credential.username)            
+
+        elif option_1 == '5':
             print("\n")
             print("Thank you for your time")
         else:

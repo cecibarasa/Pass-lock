@@ -68,18 +68,11 @@ class TestUser(unittest.TestCase):
         found_user = User.find_user_by_username("James")
         self.assertEqual(found_user.username, test_user.username)
 
-    # def pass_generator(self):
-    #     chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    #     digits = '0123456789'
-    #     symbols = '`#^*&$|<>}+@!~'
-    #     length = input('password length?')
-    #     length = int(length)
-    #     combined_pass = chars + digits + symbols
-
-    #     password = ''
-    #     for i in range(length):
-    #         password = random.choice(combined_pass)
-    #     print(password)
+    def test_display_all_users(self):
+        """
+        method that returns a list of all users saved
+        """
+        self.assertEqual(User.display_user(), User.user_list)
                        
 
 if __name__ == '__main__':
