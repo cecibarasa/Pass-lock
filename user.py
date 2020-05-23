@@ -1,14 +1,14 @@
 class User:
     
 
-    def __init__(self, service_provider, username, password):
+    def __init__(self, username, password):
 
         '''
         __init__ method that helps us define properties for our objects.
 
         '''
         
-        self.service_provider = service_provider
+        #self.service_provider = service_provider
         self.username = username
         self.password = password
 
@@ -52,4 +52,12 @@ class User:
         """
         if User in User.user_list:
             print(User)
-            return User             
+            return User
+
+    def signup(self):
+        '''
+        signs up the user
+        '''
+        if User in User.user_list:
+            print(User)
+            return User                    
