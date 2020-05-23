@@ -1,5 +1,5 @@
 import unittest  #Import unittest module
-import random  # for pass generator
+import random
 from user import User
 
 
@@ -26,59 +26,61 @@ class TestUser(unittest.TestCase):
         '''
 
         self.assertEqual(self.new_user.service_provider,"Instagram")
-        self.assertEqual(self.new_user.user_name,"James")
-        self.assertEqual(self.new_user.user_password, "0875345")
+        self.assertEqual(self.new_user.username,"James")
+        self.assertEqual(self.new_user.password, "0875345")
         
-    def save_user(self):
+    def test_save_user(self):
         '''
-        test_save_contact test case to test if the contact object is saved into
-         the contact list
+        save user method
         '''
-        self.new_user.save_user() # saving the new contact
+        self.new_user.save_user()
         self.assertEqual(len(User.user_list), 1)
 
-    # setup and class creation up here
     def tearDown(self):
-            '''
-            tearDown method that does clean up after each test case has run.
-            '''
-            User.user_list = []
+        '''
+        Method that does the clean up after each test run
+        '''
+        User.user_list = []
 
-# other test cases here
     def test_save_multiple_user(self):
-            '''
-            test_save_multiple_contact to check if we can save multiple contact
-            objects to our contact_list
-            '''
-            self.new_user.save_user()
-            test_user = User("Test","user","0712345678") # new contact
-            test_user.save_user()
-            self.assertEqual(len(User.user_list), 2)
-            
-    def test_delete_user(self):
-            '''
-            test_delete_contact to test if we can remove a contact from our contact list
-            '''
-            self.new_user.save_user()
-            test_user = User("Test","user","0712345678") # new contact
-            test_user.save_user()
-
-            self.new_user.delete_user()# Deleting a contact object
-            self.assertEqual(len(User.user_list),1)        
-
-    def test_find_user_by_service_provider(self):
-        '''
-        test to check if we can find a contact by phone number and display information
-        '''
-
         self.new_user.save_user()
-        test_user = User("Test","user","0711223344") # new contact
+        test_user = User("Twitter", "user", "1233")
         test_user.save_user()
+        self.assertEqual(len(User.user_list), 2)
 
-        found_user = User.find_by_service_provider("Test")
+    def test_delete_user(self):
+        '''
+        Method to delete user from list
+        '''
+        self.new_user.save_user()
+        test_user = User("Twitter", "user", "1233")
+        test_user.save_user()
+        self.new_user.delete_user()
+        self.assertEqual(len(User.user_list), 1)
 
-        self.assertEqual(found_user.service_provider,test_user.service_provider)
+    def test_find_user_by_username(self):
+        '''
+        Method to find user by their username
+        '''
+        self.new_user.save_user()
+        test_user = User("Instagram", "James", "0875345")
+        test_user.save_user()
+        found_user = User.find_user_by_username("James")
+        self.assertEqual(found_user.username, test_user.username)
 
+    # def pass_generator(self):
+    #     chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    #     digits = '0123456789'
+    #     symbols = '`#^*&$|<>}+@!~'
+    #     length = input('password length?')
+    #     length = int(length)
+    #     combined_pass = chars + digits + symbols
+
+    #     password = ''
+    #     for i in range(length):
+    #         password = random.choice(combined_pass)
+    #     print(password)
+                       
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,7 +1,7 @@
 class User:
     
-    
-    def __init__(self,service_provider,user_name,user_password):
+
+    def __init__(self, service_provider, username, password):
 
         '''
         __init__ method that helps us define properties for our objects.
@@ -9,17 +9,18 @@ class User:
         '''
         
         self.service_provider = service_provider
-        self.user_name = user_name
-        self.user_password = user_password
- # Init method up here
-    user_list = []  # Empty user list
+        self.username = username
+        self.password = password
+
+    user_list = []  # Empty user list    
+    # Init method up here
     def save_user(self):
 
         '''
         save_user method saves user objects into user_list
         '''
 
-        User.user_list.append(self)
+        User.user_list.append(self)    
 
     def delete_user(self):
 
@@ -30,11 +31,17 @@ class User:
         User.user_list.remove(self)
 
     @classmethod
-    def find_by_service_provider(cls,service_provider):
+    def find_user_by_username(cls,username):
         '''
         Method that takes in a service provider and returns a user that matches that service provider.
         '''
 
         for user in cls.user_list:
-            if user.service_provider == service_provider:
-                return user    
+            if user.username == username:
+                return user
+    @classmethod
+    def display_user(cls):
+        """
+        method that returns the class array
+        """
+        return cls.user_list            
