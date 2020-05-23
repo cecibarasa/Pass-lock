@@ -52,13 +52,14 @@ def display_credentials():
     '''
     Method to display user credentials
     '''
-    return Credentials.display_credentials()        
+    return Credentials.display_credentials()
+
 
 def main():
     print("Welcome to The Password Locker, select any option")
 
     while True:
-        print("\n 1 - Create a new user account  \n 2- Register new credentials \n 3- Display existing users \n 4- Delete Account \n 5- Exit")
+        print("\n 1 - Create a new user account with your own password  \n 2- Register new credentials with auto-generated password \n 3- Display existing users \n 4- Delete Account \n 5- Exit")
 
         option_1 = input()
 
@@ -80,47 +81,47 @@ def main():
             save_credentials(create_credentials(service_provider, username, password))
             print("\n")
             
-            print(f"The {service_provider} account by {username} and {password} has been successfully registered")
+            print(f"The {service_provider} account by {username} with {password} password has been successfully registered")
             #print(f"{username} your password is {password}")
 
             print("\n")
 
         elif option_1 == '2':
             no_of_accounts = int(input("How many accounts would you like to have?"))
-            range(no_of_accounts)
-            print("New User")
-            print("-" * 20)
-            
-            print("service provider")
-            service_provider = input()
+            for i in range(no_of_accounts):
+                print("New User")
+                print("-" * 20)
+                
+                print("service provider")
+                service_provider = input()
 
-            print("username")
-            username = input()
+                print("username")
+                username = input()
 
-            chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-            digits = '0123456789'
-            symbols = '`#^*&$|<>}+@!~=-+_'
-            length = input('password length?')
-            length = int(length)
-            combined_pass = chars + digits + symbols
+                chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+                digits = '0123456789'
+                symbols = '`#^*&$|<>}+@!~=-+_'
+                length = input('password length?')
+                length = int(length)
+                combined_pass = chars + digits + symbols
 
-            password = ''
-            # for i in range(length):
-            #     password = random.choice(combined_pass)
-            
-            for i in range(length):
-                password += random.choice(combined_pass)
-            # pyperclip.copy(password)
-            # password = pyperclip.paste()
-            print(password)
+                password = ''
+                # for i in range(length):
+                #     password = random.choice(combined_pass)
+                
+                for i in range(length):
+                    password += random.choice(combined_pass)
+                # pyperclip.copy(password)
+                # password = pyperclip.paste()
+                print(password)
 
-            save_user(create_user(service_provider, username, password))
-            save_credentials(create_credentials(service_provider, username, password))
+                save_user(create_user(service_provider, username, password))
+                save_credentials(create_credentials(service_provider, username, password))
 
-            print("\n")
+                print("\n")
 
-            print(f"The {service_provider} account by {username} has been successfully registered")
-            print(f"Your password is {password}")
+                print(f"The {service_provider} account by {username} has been successfully registered")
+                print(f"Your password is {password}")
 
         elif option_1 == '3':
 
@@ -129,12 +130,7 @@ def main():
                 print("\n")
 
                 for user in display_user():
-                    print(f"{user.service_provider}, {user.username} is registered")
-                    print("\n")
-
-                else:
-                    print("\n")
-                    print("Sorry your details are invalid")
+                    print(f"{user.service_provider}, has the username {user.username} registered!")
                     print("\n")
 
         elif option_1 == '4':
