@@ -58,7 +58,7 @@ def main():
     print("Welcome to The Password Locker, select any option")
 
     while True:
-        print("\n 1 - Create a new user account  \n 2- Register new credentials")
+        print("\n 1 - Create a new user account  \n 2- Register new credentials \n 3- Display existing users \n 4- Exit")
 
         option_1 = input()
 
@@ -118,6 +118,27 @@ def main():
 
             print(f"The {service_provider} account by {username} has been successfully registered")
             print(f"Your password is {password}")
+
+        elif option_1 == '3':
+
+            if display_user():
+                print("Here is a alist of all the accounts")
+                print("/n")
+
+                for user in display_user():
+                    print(f"{user.service_provider}, {user.username} is registered")
+                    print("\n")
+
+                else:
+                    print("\n")
+                    print("Sorry your details are invalid")
+                    print("\n")
+
+        elif option_1 == 4:
+            print("\n")
+            print("Thank you for your time")
+        else:
+            print("Sorry wrong input")
     
 
 if __name__ == '__main__':
