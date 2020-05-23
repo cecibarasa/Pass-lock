@@ -3,12 +3,13 @@ import pyperclip
 import random
 from user import User
 from credentials import Credentials
+import login
 
 def create_user(service_provider, username, password):
     '''
     Create User
     '''
-    new_user = User(service_provider, username, password)
+    new_user = User( username, password)
     return new_user
 
 def create_credentials(service_provider, username, password):
@@ -59,11 +60,13 @@ def main():
     print("Welcome to The Password Locker, select any option")
 
     while True:
-        print("\n 1 - Create a new user account with your own password  \n 2- Register new credentials with auto-generated password \n 3- Display existing users \n 4- Delete Account \n 5- Exit")
+        print("\n 1- Main menu \n 2- Create a new user account with your own password  \n 3- Register new credentials with auto-generated password \n 4- Display existing users \n 5- Delete Account \n 6- Exit")
 
         option_1 = input()
-
         if option_1 == '1':
+            print("displayMenu()")
+
+        elif option_1 == '2':
             
             print("New User")
             print("-"*20)
@@ -86,7 +89,7 @@ def main():
 
             print("\n")
 
-        elif option_1 == '2':
+        elif option_1 == '3':
             no_of_accounts = int(input("How many accounts would you like to have?"))
             for i in range(no_of_accounts):
                 print("New User")
@@ -123,24 +126,24 @@ def main():
                 print(f"The {service_provider} account by {username} has been successfully registered")
                 print(f"Your password is {password}")
 
-        elif option_1 == '3':
+        elif option_1 == '4':
 
             if display_user():
                 print("Here is a alist of all the accounts")
                 print("\n")
 
                 for user in display_user():
-                    print(f"{user.service_provider}, has the username {user.username} registered!")
+                    print(f"Congratulations {user.username} registered!")
                     print("\n")
 
-        elif option_1 == '4':
+        elif option_1 == '5':
             print("\n")
             # for credentials in save_credentials(credential.username):
             #     print(f"Are you sure you want to delete {credential.username} ?")
             #     print("\n")
             #     return Credentials.credentials_list.remove(credential.username)            
 
-        elif option_1 == '5':
+        elif option_1 == '6':
             print("\n")
             print("Thank you for your time")
         else:

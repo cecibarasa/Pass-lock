@@ -1,8 +1,8 @@
-# start
 from user import User
+
 def displayMenu():
-    print("="*35)
-    status = input("Are you registered user? y/n? \tPress q to quit::").lower()
+    print("-"*20)
+    status = input("Are you registered user? y/n?").lower()
     if status == "y":
         login()
     elif status == "n":
