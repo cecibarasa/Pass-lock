@@ -99,7 +99,7 @@ def main():
 
             chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
             digits = '0123456789'
-            symbols = '`#^*&$|<>}+@!~'
+            symbols = '`#^*&$|<>}+@!~=-+_'
             length = input('password length?')
             length = int(length)
             combined_pass = chars + digits + symbols
