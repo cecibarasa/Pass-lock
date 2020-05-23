@@ -44,4 +44,12 @@ class User:
         """
         method that returns the class array
         """
-        return cls.user_list            
+        return cls.user_list
+
+    def login(self):
+        """
+        This method checks if a user object exists in the users list
+        """
+        if User in User.user_list:
+            print(User)
+            return User             
