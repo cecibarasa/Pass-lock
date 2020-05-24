@@ -56,12 +56,20 @@ def display_credentials():
     '''
     return Credentials.display_credentials()
 
+def find_user_by_username(cls,username):
+        '''
+        Method that takes in a service provider and returns a user that matches that service provider.
+        '''
+        for user in cls.user_list:
+            if user.username == username:
+                return user    
+
 
 def main():
     print("Welcome to The Password Locker, select any option")
 
     while True:
-        cprint("\n 1- Main menu \n 2- Create a new user account with your own password  \n 3- Register new credentials with auto-generated password \n 4- Display existing users \n 5- Delete Account \n 6- Exit", "yellow")
+        print("\n 1- Main menu \n 2- Create a new user account with your own password  \n 3- Register new credentials with auto-generated password \n 4- Display existing users \n 5- Delete Account \n 6- Exit")
 
         option_1 = input()
         if option_1 == '1':
@@ -70,7 +78,7 @@ def main():
         elif option_1 == '2':
             
             print("New User")
-            print("-"*20, "yellow")
+            cprint("-"*50, "yellow")
 
             print("service provider...")
             service_provider = input()
@@ -96,7 +104,7 @@ def main():
             no_of_accounts = int(input("How many accounts would you like to have?"))
             for i in range(no_of_accounts):
                 print("New User")
-                print("-" * 20, "yellow")
+                cprint("-" * 40, "yellow")
                 
                 print("service provider")
                 service_provider = input()
@@ -134,7 +142,7 @@ def main():
                 print("\n")
 
                 for user in display_user():
-                    print(f"Congrats {user.username} registered!")
+                    cprint(f"Hey {user.username} your {user.password} password is safeley stored!", "yellow")
                     print("\n")
 
         elif option_1 == '5':

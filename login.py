@@ -16,7 +16,7 @@ def register():
     if password == password2:
         user = User(username, password)
         user.save_user
-        print(f"Welcome {username}! You're now registered")
+        cprint(f"Welcome {username}! You're now registered", "yellow")
         cprint("Lets Login", "yellow")
         print(login())
     else:
@@ -28,7 +28,7 @@ def login():
     
     if user is not None:
         user.login
-        cprint(f"Welcome {username}! You're now Logged In", "blue")
+        cprint(f"Welcome {username}! You're now Logged In", "yellow")
     else:
         cprint("Invalid Username or Password.", "red")
 
