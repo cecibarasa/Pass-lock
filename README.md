@@ -19,7 +19,7 @@
 
 [![cecibarasa](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/cecibarasa/) [![ForTheBadge built-by-developers](http://ForTheBadge.com/images/badges/built-by-developers.svg)](https://GitHub.com/cecibarasa/)
 
-<!-- ## [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/cecibarasa//blob/master/license.md) -->
+## [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/cecibarasa/Pass-lock/blob/master/license.md)
 
 ## [Support and contact details](https://www.linkedin.com/in/cecilia-barasa-4a8311195/)
 
