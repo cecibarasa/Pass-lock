@@ -17,7 +17,7 @@ class TestUser(unittest.TestCase):
         '''
         Set up method to run before each test cases.
         '''
-        self.new_user = User("Instagram","James", "0875345") # create contact object
+        self.new_user = User("James", "0875345") # create contact object
 
 
     def test_init(self):
@@ -25,7 +25,7 @@ class TestUser(unittest.TestCase):
         test_init test case to test if the object is initialized properly
         '''
 
-        self.assertEqual(self.new_user.service_provider,"Instagram")
+        #self.assertEqual(self.new_user.service_provider,"Instagram")
         self.assertEqual(self.new_user.username,"James")
         self.assertEqual(self.new_user.password, "0875345")
         
@@ -44,7 +44,7 @@ class TestUser(unittest.TestCase):
 
     def test_save_multiple_user(self):
         self.new_user.save_user()
-        test_user = User("Twitter", "user", "1233")
+        test_user = User( "user", "1233")
         test_user.save_user()
         self.assertEqual(len(User.user_list), 2)
 
@@ -53,7 +53,7 @@ class TestUser(unittest.TestCase):
         Method to delete user from list
         '''
         self.new_user.save_user()
-        test_user = User("Twitter", "user", "1233")
+        test_user = User("user", "1233")
         test_user.save_user()
         self.new_user.delete_user()
         self.assertEqual(len(User.user_list), 1)
@@ -63,7 +63,7 @@ class TestUser(unittest.TestCase):
         Method to find user by their username
         '''
         self.new_user.save_user()
-        test_user = User("Instagram", "James", "0875345")
+        test_user = User("James", "0875345")
         test_user.save_user()
         found_user = User.find_user_by_username("James")
         self.assertEqual(found_user.username, test_user.username)

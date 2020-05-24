@@ -4,6 +4,7 @@ import random
 from user import User
 from credentials import Credentials
 import login
+from termcolor import colored, cprint
 
 def create_user(service_provider, username, password):
     '''
@@ -60,7 +61,7 @@ def main():
     print("Welcome to The Password Locker, select any option")
 
     while True:
-        print("\n 1- Main menu \n 2- Create a new user account with your own password  \n 3- Register new credentials with auto-generated password \n 4- Display existing users \n 5- Delete Account \n 6- Exit")
+        cprint("\n 1- Main menu \n 2- Create a new user account with your own password  \n 3- Register new credentials with auto-generated password \n 4- Display existing users \n 5- Delete Account \n 6- Exit", "yellow")
 
         option_1 = input()
         if option_1 == '1':
@@ -69,7 +70,7 @@ def main():
         elif option_1 == '2':
             
             print("New User")
-            print("-"*20)
+            print("-"*20, "yellow")
 
             print("service provider...")
             service_provider = input()
@@ -79,6 +80,8 @@ def main():
 
             print("password..")
             password = input()
+            # pyperclip.copy(password)
+            # password = pyperclip.paste()
             
             save_user(create_user(service_provider, username, password))
             save_credentials(create_credentials(service_provider, username, password))
@@ -93,7 +96,7 @@ def main():
             no_of_accounts = int(input("How many accounts would you like to have?"))
             for i in range(no_of_accounts):
                 print("New User")
-                print("-" * 20)
+                print("-" * 20, "yellow")
                 
                 print("service provider")
                 service_provider = input()
@@ -114,8 +117,6 @@ def main():
                 
                 for i in range(length):
                     password += random.choice(combined_pass)
-                # pyperclip.copy(password)
-                # password = pyperclip.paste()
                 print(password)
 
                 save_user(create_user(service_provider, username, password))
@@ -133,7 +134,7 @@ def main():
                 print("\n")
 
                 for user in display_user():
-                    print(f"Congratulations {user.username} registered!")
+                    print(f"Congrats {user.username} registered!")
                     print("\n")
 
         elif option_1 == '5':
