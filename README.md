@@ -1,5 +1,7 @@
 [![codebeat badge](https://codebeat.co/badges/6a2daa48-ceed-4313-8378-794aa6117643)](https://codebeat.co/projects/github-com-cecibarasa-pass-lock-master)
 
+* [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+
 ## Password Locker
 * This is a python application that allows the user to generate a password, store account credentials, view their credentials and save their account details
 
