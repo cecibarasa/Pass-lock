@@ -16,7 +16,7 @@
 
 ## Technologies Used
 * `Python3.6.9`
-[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
+* [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 
 [![cecibarasa](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/cecibarasa/) [![ForTheBadge built-by-developers](http://ForTheBadge.com/images/badges/built-by-developers.svg)](https://GitHub.com/cecibarasa/)
 
