@@ -88,8 +88,8 @@ def main():
 
             print("password..")
             password = input()
-            # pyperclip.copy(password)
-            # password = pyperclip.paste()
+            pyperclip.copy(password)
+            #password = pyperclip.paste()
             
             save_user(create_user(service_provider, username, password))
             save_credentials(create_credentials(service_provider, username, password))
@@ -142,11 +142,12 @@ def main():
                 print("\n")
 
                 for user in display_user():
-                    cprint(f"Hey {user.username} your {user.password} password is safeley stored!", "yellow")
+                    cprint(f"Hey {user.username} your {user.password} password is safely stored!", "yellow")
                     print("\n")
 
         elif option_1 == '5':
             print("\n")
+            
             # for credentials in save_credentials(credential.username):
             #     print(f"Are you sure you want to delete {credential.username} ?")
             #     print("\n")
@@ -154,9 +155,10 @@ def main():
 
         elif option_1 == '6':
             print("\n")
-            print("Thank you for your time")
+            cprint("Thank you for your time!", "green")
+            break
         else:
-            print("Sorry wrong input")
+            cprint("Sorry wrong input", "red")
     
 
 if __name__ == '__main__':

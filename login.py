@@ -2,8 +2,8 @@ from user import User
 from termcolor import colored, cprint
 
 def displayMenu():
-    cprint("-"*20, "yellow")
-    status = input("Are you registered user? y/n?  "  ).lower()
+    cprint("-"*40, "yellow")
+    status = input("Are you registered user? y/n?  ").lower()
     if status == "y":
         login()
     elif status == "n":
