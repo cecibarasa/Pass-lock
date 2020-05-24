@@ -1,0 +1,1 @@
+[![codebeat badge](https://codebeat.co/badges/6a2daa48-ceed-4313-8378-794aa6117643)](https://codebeat.co/projects/github-com-cecibarasa-pass-lock-master)
